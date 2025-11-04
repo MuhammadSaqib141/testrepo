@@ -2,15 +2,13 @@ name: Scheduled Workflow
 
 on:
   schedule:
-    - cron: '* * * * *'   # Runs every 1 minute (optional)
-  workflow_dispatch:       # Allows manual run
+    - cron: '* * * * *'
+  workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run a script
-        run: echo "This job runs on a schedule or manually!"
+      - name: Show timestamp
+        run: |
+          echo "Workflow triggered at: $(date -u)"
