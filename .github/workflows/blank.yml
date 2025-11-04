@@ -10,5 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show timestamp
-        run: |
-          echo "Workflow triggered at: $(date -u)"
+        run: echo "Workflow triggered at $(date -u)"
